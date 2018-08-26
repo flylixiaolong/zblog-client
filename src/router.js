@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Layout from './views/base/layout.vue'
 
 Vue.use(Router)
 
@@ -8,8 +8,25 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: '_home',
+      redirect: '/home',
+      component: Layout,
+      meta: {
+        hideInMenu: true,
+        notCache: true
+      },
+      children: [
+        {
+          path: '/home',
+          name: 'home',
+          meta: {
+            hideInMenu: true,
+            title: '首页',
+            notCache: true
+          },
+          component: () => import('@/views/main.vue')
+        }
+      ]
     },
     {
       path: '/about',
@@ -17,12 +34,12 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import(/* webpackChunkName: "about" */ '@/views/about.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('./views/Login.vue')
+      component: () => import('@/views/login.vue')
     },
   ]
 })
