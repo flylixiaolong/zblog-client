@@ -1,6 +1,6 @@
 <template>
   <el-container class="layout">
-    <el-aside width="200px">
+    <el-aside width="min-content">
       <el-col :span="24">
         <el-menu
           default-active="2"
@@ -9,6 +9,7 @@
           class="demo"
           background-color="#222"
           text-color="#6f6f6f"
+          :collapse="isCollapse"
           active-text-color="#ffd04b">
           <el-menu-item index="1">
             <font-awesome-icon icon="chart-pie"></font-awesome-icon>
@@ -60,7 +61,9 @@
       </el-col>
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <font-awesome-icon icon="outdent" @click="open()" ></font-awesome-icon>
+      </el-header>
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -75,7 +78,15 @@
 export default {
   name: "home",
   components: {},
+  data() {
+      return {
+        isCollapse: true
+    }
+  },
   methods: {
+    open(){
+      this.isCollapse = !this.isCollapse;
+    },
     handleOpen: function() {
     },
     handleClose: function() {
@@ -90,6 +101,10 @@ export default {
 }
 .demo {
   border-right: none !important; 
+}
+.demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
 }
 
 </style>
