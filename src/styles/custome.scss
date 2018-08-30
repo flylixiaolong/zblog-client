@@ -1,0 +1,36 @@
+.el-header,
+.el-footer {
+  font-weight: bolder;
+  line-height: 60px;
+  background-color: white;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.el-aside {
+  font-weight: bolder;
+  background-color: #222;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  text-align: left;
+  line-height: 200px;
+}
+
+.el-main {
+  text-align: left;
+  line-height: 160px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-menu li{
+  border-right: none; 
+}
+
+.el-menu [class^=svg-inline--fa] {
+    vertical-align: middle;
+    margin: 0 10px 0 2px;
+    width: 24px;
+    text-align: center;
+    font-size: 16px;
+}

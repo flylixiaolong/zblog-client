@@ -31,6 +31,7 @@ export default {
 <style scoped>
   .login {
     padding: 200px 0;
+    text-align: center;
   }
 
   .submmit {

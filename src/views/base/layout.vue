@@ -10,36 +10,52 @@
           background-color="#222"
           text-color="#6f6f6f"
           active-text-color="#ffd04b">
-          <el-submenu index="1">
+          <el-menu-item index="1">
+            <font-awesome-icon icon="chart-pie"></font-awesome-icon>
+            <span slot="title">站点统计</span>
+          </el-menu-item>
+          <el-submenu index="2">
             <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>导航一</span>
+              <font-awesome-icon icon="folder"></font-awesome-icon>
+              <span>文章管理</span>
             </template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
+            <el-menu-item index="2-1">文章列表</el-menu-item>
+            <el-menu-item index="2-2">发表文章</el-menu-item>
+            <el-menu-item index="2-3">更新文章</el-menu-item>
           </el-submenu>
-          <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
-          </el-menu-item>
-          <el-menu-item index="3" disabled>
-            <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
+          <el-submenu index="3">
+            <template slot="title">
+              <font-awesome-icon icon="th-list"></font-awesome-icon>
+              <span>分类管理</span>
+            </template>
+            <el-menu-item index="3-1">分类列表</el-menu-item>
+            <el-menu-item index="3-2">新增分类</el-menu-item>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <font-awesome-icon icon="tags"></font-awesome-icon>
+              <span>标签管理</span>
+            </template>
+            <el-menu-item index="4-1">标签列表</el-menu-item>
+            <el-menu-item index="4-2">新增标签</el-menu-item>
+          </el-submenu>
+          <el-submenu index="5">
+            <template slot="title">
+              <font-awesome-icon icon="envelope"></font-awesome-icon>
+              <span>留言管理</span>
+            </template>
+            <el-menu-item index="5-1">留言列表</el-menu-item>
+            <el-menu-item index="5-2">回复留言</el-menu-item>
+          </el-submenu>
+          <el-submenu index="6">
+            <template slot="title">
+              <font-awesome-icon icon="cogs"></font-awesome-icon>
+              <span>站点管理</span>
+            </template>
+            <el-menu-item index="6-1">访问列表</el-menu-item>
+            <el-menu-item index="6-2">友情链接</el-menu-item>
+            <el-menu-item index="6-3">站长资料</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-col>
     </el-aside>
@@ -75,49 +91,5 @@ export default {
 .demo {
   border-right: none !important; 
 }
-.el-header,
-.el-footer {
-  font-weight: bolder;
-  text-align: center;
-  line-height: 60px;
-}
 
-.el-header {
-  background-color: white;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
-}
-
-.el-footer {
-  background-color: white;
-}
-
-.el-aside {
-  font-weight: bolder;
-  background-color: #222;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
-  text-align: left;
-  line-height: 200px;
-}
-
-.el-main {
-  text-align: left;
-  line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
-
-.el-menu li{
-  border-right: none; 
-}
 </style>
